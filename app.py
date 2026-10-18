@@ -31,7 +31,7 @@ with st.sidebar:
     exp=st.number_input("Instructor experience (years)",min_value=0,max_value=60,value=5)
     teacher_rating=st.slider("Instructor rating",min_value=1.0,max_value=5.0,value=4.0,step=0.1)
     teacher_age=st.number_input("Instructor age",min_value=18,max_value=90,value=35)
-    expertise=st.selectbox("Instructor expertise",sorted(data.Expertise.dropna().unique()))
+    expertise=st.selectbox("Instructor expertise",sorted(data.expertise.dropna().unique()))
 
 def derive_features(row):
     row['PriceBand']=pd.cut(pd.Series([row['CoursePrice']]),bins=[-np.inf,0,50,150,300,np.inf],labels=['Free','Low','Mid','High','Premium']).astype(str).iloc[0]
