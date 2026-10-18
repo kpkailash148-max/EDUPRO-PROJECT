@@ -61,7 +61,12 @@ with tab1:
     row={'CourseCategory':category,'CourseType':course_type,'CourseLevel':level,'CoursePrice':price,'CourseDuration':duration,'CourseRating':rating,'YearsOfExperience':exp,'TeacherRating':teacher_rating,'Age':teacher_age,'Expertise':expertise}
     row=derive_features(row)
     e,r=st.columns(2)
-    e.metric("Estimated enrollments",f"{predict('Enrollment_Count',row):,.0f}")
+    # Automatically locate the correct enrollment key target column
+enroll_col = next((c for c in row.index if 'enrollment' in c.lower() or 'count' in c.lower()), None)
+pred_val = predict(enroll_col, row) if enroll_col else 0
+
+e.metric("Estimated enrollments", f"{int(pred_val)}")
+
     r.metric("Estimated course revenue",f"₹{predict('Course_Revenue',row):,.0f}")
     st.caption("These are model estimates from a small historical dataset, not guarantees. Estimates assume course attributes are comparable to courses in the supplied data.")
 with tab2:
