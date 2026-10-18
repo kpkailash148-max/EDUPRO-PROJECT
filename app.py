@@ -7,7 +7,7 @@ import plotly.express as px
 import joblib
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
-from src.modeling import load_data
+from modeling import load_data
 st.set_page_config(page_title="EduPro Forecasting",page_icon="📊",layout="wide")
 st.title("EduPro | Course Demand & Revenue Forecasting")
 st.caption("Decision-support prototype using the supplied 2025 course and transaction data")
