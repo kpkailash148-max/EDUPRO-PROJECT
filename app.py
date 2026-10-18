@@ -61,15 +61,15 @@ with tab1:
     row={'CourseCategory':category,'CourseType':course_type,'CourseLevel':level,'CoursePrice':price,'CourseDuration':duration,'CourseRating':rating,'YearsOfExperience':exp,'TeacherRating':teacher_rating,'Age':teacher_age,'Expertise':expertise}
     row=derive_features(row)
     e,r=st.columns(2)
-    # Automatically locate the correct enrollment key target column
-enroll_col = next((c for c in row.index if 'enrollment' in c.lower() or 'count' in c.lower()), None)
-pred_val = predict(enroll_col, row) if enroll_col else 0
+            # Estimate Enrollments safely
+        enroll_col = next((c for c in row.index if 'enrollment' in c.lower() or 'count' in c.lower()), None)
+        pred_enroll = predict(enroll_col, row) if enroll_col else 0
+        e.metric("Estimated enrollments", f"{int(pred_enroll)}")
 
-e.metric("Estimated enrollments", f"{int(pred_val)}")
-
-    r.metric("Estimated course revenue",f"₹{predict('Course_Revenue',row):,.0f}")
-    st.caption("These are model estimates from a small historical dataset, not guarantees. Estimates assume course attributes are comparable to courses in the supplied data.")
-with tab2:
+        # Estimate Revenue safely
+        rev_col = next((c for c in row.index if 'revenue' in c.lower() or 'fee' in c.lower()), None)
+        pred_rev = predict(rev_col, row) if rev_col else 0
+        r.metric("Estimated course revenue", f"₹{pred_rev:,.0f}")
     a,b=st.columns(2)
     with a: st.plotly_chart(px.bar(cat.sort_values('Total_Revenue',ascending=False),x='CourseCategory',y='Total_Revenue',title='Revenue by category',labels={'Total_Revenue':'Revenue (₹)','CourseCategory':'Category'}),use_container_width=True)
     with b: st.plotly_chart(px.bar(cat.sort_values('Total_Enrollments',ascending=False),x='CourseCategory',y='Total_Enrollments',title='Enrollments by category',labels={'Total_Enrollments':'Enrollments','CourseCategory':'Category'}),use_container_width=True)
