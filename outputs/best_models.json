@@ -1,0 +1,10 @@
+{
+  "Enrollment_Count": {
+    "model": "Random Forest",
+    "pipeline": "Enrollment_Count_best.joblib"
+  },
+  "Course_Revenue": {
+    "model": "Lasso",
+    "pipeline": "Course_Revenue_best.joblib"
+  }
+}

@@ -1,0 +1,41 @@
+Feature,Importance
+num__CoursePrice,0.9721647074033412
+cat__PriceBand_Premium,0.013529474454297188
+num__CourseRating,0.002999315896462412
+cat__PriceBand_Mid,0.0019937690092380763
+cat__CourseType_Paid,0.0012072060267292737
+cat__CourseType_Free,0.0011292262153690565
+cat__RatingTier_Excellent,0.0009932484921534189
+num__CourseDuration,0.0008131398201575654
+cat__CourseCategory_Business,0.0007268053639333424
+cat__PriceBand_High,0.0006792050897589679
+cat__PriceBand_Free,0.0006627077465181722
+cat__RatingTier_Fair,0.0005855503619548471
+cat__CourseCategory_Artificial Intelligence,0.0005633314418285193
+cat__CourseLevel_Intermediate,0.0005104710648488051
+cat__CourseLevel_Advanced,0.000259377865141478
+cat__CourseCategory_Project Management,0.00020427757445596703
+cat__CourseLevel_Beginner,0.0001870985464971152
+cat__DurationBucket_Long,0.00016377598443134564
+cat__Expertise_Machine Learning,0.00011767111947080856
+cat__RatingTier_Low,9.97521398735848e-05
+cat__DurationBucket_Medium,9.355140060898247e-05
+cat__CourseCategory_Digital Marketing,7.130836846008807e-05
+num__TeacherRating,6.830430764105151e-05
+cat__Expertise_Cybersecurity,6.445729475271557e-05
+cat__CourseCategory_Web Development,5.9263963415322066e-05
+cat__DurationBucket_Extended,2.0479580865210313e-05
+cat__PriceBand_Low,1.616589820681388e-05
+cat__CourseCategory_Finance,8.46150209790342e-06
+num__YearsOfExperience,7.774354348179817e-06
+cat__CourseCategory_Machine Learning,1.0216026994063762e-07
+cat__RatingTier_Good,1.4104087747722844e-08
+num__ExpertiseCategoryMatch,5.448784891760715e-09
+num__Age,0.0
+cat__CourseCategory_Programming,0.0
+cat__CourseCategory_Cybersecurity,0.0
+cat__CourseCategory_Marketing,0.0
+cat__CourseCategory_Design,0.0
+cat__CourseCategory_Data Science,0.0
+cat__DurationBucket_Short,0.0
+cat__ExperienceBucket_Senior,0.0
